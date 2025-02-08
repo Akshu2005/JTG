@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JTGeats - Authentic Home Food</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background: #f0f0f0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .request-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 500px; 
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 22px); 
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: flex-end; 
+            margin-top: 20px;
+        }
+
+        .button-group button {
+            margin-left: 10px; 
+        }
+
+        .cancel {
+            background-color: #f44336; 
+        }
+
+        .cancel:hover {
+            background-color: #d32f2f;
+        }
+
+
+        .navbar {
+            background-color: #1AC073;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100; 
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .icons a {
+            color: white;
+            font-size: 1.2em;
+        }
+
+
+        body {
+            padding-top: 60px; 
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">JTGeats</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="icons">
+            <a href="#"><i class="fas fa-search" style="color: white;"></i></a>
+            <a href="shopping-bag.html"><i class="fas fa-shopping-bag" style="color: white;"></i></a>
+        </div>
+    </nav>
+
+<div class="request-container">
+    <h2>Request a Dish</h2>
+    <form id="requestForm">
+        <label for="dishName">Name*</label>
+        <input type="text" id="dishName" name="dishName" placeholder="Enter name of the dish" required>
+
+        <label for="imageURL">Upload an image</label>
+        <input type="text" id="imageURL" name="imageURL" placeholder="Paste a URL">
+
+        <div class="button-group">
+            <button type="button" class="cancel" id="cancelButton">Cancel</button>
+            <button type="submit">Submit Request</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    const form = document.getElementById('requestForm');
+    const cancelButton = document.getElementById('cancelButton');
+
+    cancelButton.addEventListener('click', () => {
+        alert("Request cancelled.");
+    });
+    cancelButton.addEventListener('click', () => {
+    window.location.href = 'index.html'; 
+});
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const dishName = document.getElementById('dishName').value;
+        const imageURL = document.getElementById('imageURL').value;
+
+        alert(`Dish Name: ${dishName}\nImage URL: ${imageURL}\nRequest submitted!`);
+    });
+</script>
+
+</body>
+</html>

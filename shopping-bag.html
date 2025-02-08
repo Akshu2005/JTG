@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .cart-container {
+            /* background: white; */
+            padding: 50px;
+            border-radius: 10px;
+            /* box-shadow: white; */
+            text-align: center;
+            width: 400px;
+        }
+
+        .cart-icon {
+            font-size: 80px;
+            color: gray;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 24px;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cart-container">
+        <i class="fas fa-shopping-bag cart-icon"></i>
+        <h2>Cart is Empty</h2>
+        <p>Add some items to the cart to checkout</p>
+        <button id="back-to-home">Back to Menu</button>
+    </div>
+
+    <script>
+        document.getElementById("back-to-home").addEventListener("click", function () {
+            window.location.href = "index.html"; // Change this to your home page
+        });
+    </script>
+
+</body>
+</html>
